@@ -11,9 +11,9 @@ class Station(models.Model):
 
 
 class Sensor(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=50)
     last_update = models.DateTimeField(editable=False, null=True)
-    station = models.ForeignKey(Station, on_delete=models.CASCADE, related_name='station')
+    station = models.ForeignKey(Station, on_delete=models.CASCADE, related_name='sensors')
 
     def __str__(self):
         return f'{self.station.name}: {self.name}'
@@ -25,4 +25,6 @@ class SensorData(models.Model):
     sensor = models.ForeignKey(Sensor, on_delete=models.CASCADE, related_name='sensor')
 
     def __str__(self):
-        return f'{self.name} = {self.value}'
+        return f'{self.sensor.name} = {self.value}'
+
+
