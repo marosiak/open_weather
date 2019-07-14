@@ -12,7 +12,7 @@ class SensorDataSerializer(serializers.ModelSerializer):
 class SensorsListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Sensor
-        fields = ('id', 'name')
+        fields = ('id', 'name', 'station')
 
 
 class SensorsSerializer(serializers.ModelSerializer):
