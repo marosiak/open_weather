@@ -22,7 +22,7 @@ class Sensor(models.Model):
 class SensorData(models.Model):
     value = models.FloatField()
     date = models.DateTimeField(auto_now=True)
-    sensor = models.ForeignKey(Sensor, on_delete=models.CASCADE, related_name='sensor')
+    sensor = models.ForeignKey(Sensor, on_delete=models.CASCADE, related_name='data')
 
     def __str__(self):
         return f'{self.sensor.name} = {self.value}'

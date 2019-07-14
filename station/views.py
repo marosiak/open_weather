@@ -4,7 +4,7 @@ from django.views.generic.base import View
 from rest_framework import generics
 
 from station.models import Station, Sensor, SensorData
-from station.serializers import StationsSerializer, SensorsSerializer, SensorsListSerializer
+from station.serializers import StationsSerializer, SensorsSerializer, SensorsListSerializer, SensorDataSerializer
 
 
 class Dashboard(View):
@@ -30,10 +30,20 @@ class SensorsList(generics.ListCreateAPIView):
     serializer_class = SensorsListSerializer
 
 
-# TODO: FIX
 class SensorDetails(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = SensorsSerializer
+
     def get_queryset(self):
-        pk = self.kwargs['pk_sensor']
+        pk = self.kwargs['pk']
         return Sensor.objects.all().filter(pk=pk)
 
-    serializer_class = SensorsSerializer
+
+class SensorDataList(generics.ListCreateAPIView):
+    serializer_class = SensorDataSerializer
+
+    def perform_create(self, serializer):
+        serializer.save(sensor=Sensor.objects.all().get(pk=self.kwargs['pk']))
+
+    def get_queryset(self):
+        pk = self.kwargs['pk']
+        return SensorData.objects.all().filter(sensor=pk)

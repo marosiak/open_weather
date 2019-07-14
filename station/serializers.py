@@ -16,11 +16,11 @@ class SensorsListSerializer(serializers.ModelSerializer):
 
 
 class SensorsSerializer(serializers.ModelSerializer):
-    sensor = SensorDataSerializer(many=True, read_only=True)
+    data = SensorDataSerializer(many=True, read_only=True)
 
     class Meta:
         model = Sensor
-        fields = ('id', 'name', 'sensor')
+        fields = ('id', 'name', 'data')
 
 
 class StationsSerializer(serializers.ModelSerializer):
