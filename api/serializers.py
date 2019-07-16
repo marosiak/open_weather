@@ -16,7 +16,7 @@ class SensorsListSerializer(serializers.ModelSerializer):
 
 
 class SensorsSerializer(serializers.ModelSerializer):
-    data = SensorDataSerializer(many=True, read_only=True)
+    data = SensorDataSerializer(many=True)
 
     class Meta:
         model = Sensor
@@ -24,7 +24,7 @@ class SensorsSerializer(serializers.ModelSerializer):
 
 
 class StationsSerializer(serializers.ModelSerializer):
-    sensors = SensorsListSerializer(many=True, read_only=True)
+    sensors = SensorsListSerializer(many=True)
 
     class Meta:
         model = Station
