@@ -5,4 +5,4 @@ from django.views.generic.base import View
 
 class Dashboard(View):
     def get(self, request):
-        return render(request, 'dashboard.html')
+        return render(request, 'dashboard.html', {'is_dashboard': True})

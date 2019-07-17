@@ -2,5 +2,15 @@
   margin: 0;
   box-sizing: border-box;
   overflow-x: hidden;
+}
+
+i {
+  overflow: hidden;
+}
+
+html {
   font-family: 'Open Sans', sans-serif;
 }
+
+@import "components/Navigation";
+@import "components/Dashboard";
