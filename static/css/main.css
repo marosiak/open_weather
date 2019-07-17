@@ -12,9 +12,14 @@ html {
   font-family: "Open Sans", sans-serif;
 }
 
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
 .navigation {
   width: 100%;
-  height: 5rem;
+  height: 4rem;
   background-color: #10ACF6;
   color: white;
   display: flex;
@@ -22,6 +27,8 @@ html {
   justify-content: space-between;
   overflow: hidden;
   padding: 0 15rem;
+  margin-bottom: 2px;
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.3);
 }
 .navigation a {
   color: white;
@@ -40,13 +47,13 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 150ms;
+  transition: all 80ms;
 }
 .navigation .nav__logo i {
-  font-size: 30pt;
+  font-size: 27pt;
 }
 .navigation .nav__logo:hover {
-  transform: scale(1.1);
+  opacity: 0.5;
 }
 .navigation .nav__list {
   display: flex;
@@ -68,18 +75,105 @@ html {
   text-align: center;
   font-size: large;
   text-decoration: none;
-  transition: all 150ms;
+  transition: all 80ms;
   display: flex;
   align-items: center;
   height: 100%;
 }
 .navigation .nav__list li a:hover {
-  transform: scale(1.25);
+  opacity: 0.5;
 }
 
-.dashboard .home-section {
-  height: calc(100vh - 5rem);
-  background-color: #10ACF6;
+.social {
+  width: 5rem;
+  height: 5rem;
+  background-color: red;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  color: white;
+  transition: all 100ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social i {
+  font-size: 250%;
+}
+
+.social--facebook {
+  background-color: #4267B2;
+}
+.social--facebook:hover {
+  background-color: #365491;
+}
+
+.social--github {
+  background-color: #24292E;
+}
+.social--github:hover {
+  background-color: #101214;
+}
+
+.dashboard .section--home {
+  height: calc(100vh - 4rem - 2px);
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+.dashboard .section--home .background__img {
+  height: auto;
+  max-height: 100%;
+  width: 100%;
+  filter: blur(0.5rem);
+  transform: scale(1.09);
+  min-height: 100%;
+  object-fit: cover;
+}
+.dashboard .section--home .dashboard__short {
+  position: absolute;
+  top: 30%;
+  color: white;
+  width: 36rem;
+  font-size: 3rem;
+  text-align: center;
+  left: calc(50% - 18rem);
+  right: calc(50% - 18rem);
+  font-weight: 300;
+}
+.dashboard .section--home .dashboard__short b {
+  font-weight: 400;
+}
+.dashboard .section--about {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.dashboard .section--about .column {
+  align-items: center;
+}
+.dashboard .section--about .column h1 {
+  font-size: 36pt;
+  font-weight: 300;
+}
+.dashboard .section--about .column .spacer {
+  width: 7rem;
+  height: 0.15rem;
+  background-color: #292929;
+  margin-top: 1rem;
+  margin-bottom: 1.7rem;
+}
+.dashboard .section--about .column p {
+  width: 70vw;
+  text-align: center;
+  font-size: 17pt;
+}
+.dashboard .section--about .column .social__row {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: space-between;
+  width: 12rem;
 }
 
 /*# sourceMappingURL=main.css.map */

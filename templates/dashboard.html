@@ -1,9 +1,26 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 <div class="dashboard">
-    <div class="home-section">
-        Hellowdawd world :D <br>
-        <b>TODO:</b> Pretty view
+
+    <div class="section--home">
+        <img class="background__img" src="{% static 'img/field.jpg' %}">
+        <p class="dashboard__short animated zoomIn">Free and <b>open weather</b> stations system</p>
+    </div>
+
+    <div class="section--about">
+        <div class="column">
+            <h1 class="wow animated zoomIn">Open weather</h1>
+            <span class="spacer"></span>
+            <p class="wow animated flipInX">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Vel fringilla est ullamcorper eget nulla facilisi etiam. Curabitur gravida arcu ac
+                tortor. Facilisis gravida neque convallis a cras semper auctor neque. Nulla facilisi nullam vehicula
+                ipsum a arcu. Eu mi bibendum neque egestas congue quisque egestas.</p>
+            <div class="social__row">
+                <div class="social social--facebook wow animated zoomIn"><i class="fab fa-facebook-square"></i></div>
+                <div class="social social--github wow animated zoomIn"><i class="fab fa-github"></i></div>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}

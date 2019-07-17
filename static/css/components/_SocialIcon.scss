@@ -1,0 +1,28 @@
+.social {
+  width: 5rem;
+  height: 5rem;
+  background-color: red;
+  border-radius: .5rem;
+  cursor: pointer;
+  color: white;
+  transition: all 100ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  i {
+    font-size: 250%;
+  }
+}
+
+.social--facebook {
+  background-color: #4267B2;
+  &:hover {
+    background-color: darken(#4267B2, 9%);
+  }
+}
+.social--github {
+  background-color: #24292E;
+  &:hover {
+    background-color: darken(#24292E, 9%);
+  }
+}

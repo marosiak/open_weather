@@ -1,6 +1,75 @@
+@import "SocialIcon";
+
 .dashboard {
-  .home-section {
-    height: calc(100vh - 5rem);
-    background-color: #10ACF6;
+  .section--home {
+    height: calc(100vh - 4rem - 2px);
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+
+    .background__img {
+      height: auto;
+      max-height: 100%;
+      width: 100%;
+      filter: blur(.5rem);
+      transform: scale(1.09);
+      min-height: 100%;
+      object-fit: cover;
+    }
+
+    .dashboard__short {
+      position: absolute;
+      top: 30%;
+      color: white;
+      width: 36rem;
+      font-size: 3rem;
+      text-align: center;
+      left: calc(50% - 18rem);
+      right: calc(50% - 18rem);
+      font-weight: 300;
+
+      b {
+        font-weight: 400;
+      }
+    }
+  }
+
+
+  .section--about {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .column {
+      align-items: center;
+
+      h1 {
+        font-size: 36pt;
+        font-weight: 300;
+      }
+
+      .spacer {
+        width: 7rem;
+        height: .15rem;
+        background-color: #292929;
+        margin-top: 1rem;
+        margin-bottom: 1.7rem;
+      }
+
+      p {
+        width: 70vw;
+        text-align: center;
+        font-size: 17pt;
+      }
+
+      .social__row {
+        margin-top: 5rem;
+        display: flex;
+        justify-content: space-between;
+        width: 12rem;
+      }
+    }
   }
 }

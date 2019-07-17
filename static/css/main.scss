@@ -12,5 +12,10 @@ html {
   font-family: 'Open Sans', sans-serif;
 }
 
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
 @import "components/Navigation";
 @import "components/Dashboard";
