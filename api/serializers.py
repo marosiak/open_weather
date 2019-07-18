@@ -9,22 +9,14 @@ class SensorDataSerializer(serializers.ModelSerializer):
         fields = ('value', 'date')
 
 
-class SensorsListSerializer(serializers.ModelSerializer):
+class SensorsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Sensor
         fields = ('id', 'name', 'station')
 
 
-class SensorsSerializer(serializers.ModelSerializer):
-    data = SensorDataSerializer(many=True)
-
-    class Meta:
-        model = Sensor
-        fields = ('id', 'name', 'data')
-
-
 class StationsSerializer(serializers.ModelSerializer):
-    sensors = SensorsListSerializer(many=True)
+    sensors = SensorsSerializer(many=True)
 
     class Meta:
         model = Station

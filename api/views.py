@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404
 from rest_framework import viewsets
 from rest_framework.response import Response
 
-from api.serializers import StationsSerializer, SensorsListSerializer, SensorDataSerializer
+from api.serializers import StationsSerializer, SensorsSerializer, SensorDataSerializer
 from station.models import Station, Sensor, SensorData
 
 
@@ -24,14 +24,14 @@ class StationViewSet(viewsets.ViewSet):
 class SensorViewSet(viewsets.ModelViewSet):
 
     queryset = Sensor.objects.all()
-    serializer_class = SensorsListSerializer
+    serializer_class = SensorsSerializer
 
     def list(self, request, **kwargs):
-        queryset = Sensor.objects.all()
-        serializer = SensorsListSerializer(queryset, many=True, read_only=True)
+        queryset = Sensor.objects.all().filter(station=self.kwargs['station_pk'])
+        serializer = SensorsSerializer(queryset, many=True, read_only=True)
         return Response(serializer.data)
 
     def retrieve(self, request, pk=None, **kwargs):
-        sensor_data = SensorData.objects.all().filter(sensor=pk)
-        serializer = SensorDataSerializer(sensor_data, many=True)
+        queryset = Sensor.objects.all().filter(pk=pk)
+        serializer = SensorsSerializer(queryset, many=True, read_only=True)
         return Response(serializer.data)
