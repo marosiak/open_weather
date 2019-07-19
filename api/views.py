@@ -22,7 +22,6 @@ class StationViewSet(viewsets.ViewSet):
 
 
 class SensorViewSet(viewsets.ModelViewSet):
-
     queryset = Sensor.objects.all()
     serializer_class = SensorsSerializer
 
@@ -35,3 +34,11 @@ class SensorViewSet(viewsets.ModelViewSet):
         queryset = Sensor.objects.all().filter(pk=pk)
         serializer = SensorsSerializer(queryset, many=True, read_only=True)
         return Response(serializer.data)
+
+
+class SensorDataViewSet(viewsets.ModelViewSet):
+    queryset = SensorData.objects.all()
+    serializer_class = SensorDataSerializer
+
+    # def perform_create(self, serializer):
+    #     serializer.save()

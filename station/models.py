@@ -27,4 +27,3 @@ class SensorData(models.Model):
     def __str__(self):
         return f'{self.sensor.name} = {self.value}'
 
-
