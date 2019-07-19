@@ -5,7 +5,8 @@ from django.db import models as models
 class Station(models.Model):
     name = models.CharField(max_length=40)
     city = models.CharField(max_length=85)  # That is the longest city name being owned by city in New Zealand :)
-
+    owner = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    
     def __str__(self):
         return self.name
 
