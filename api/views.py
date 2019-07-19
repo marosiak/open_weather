@@ -1,10 +1,10 @@
-from django.shortcuts import render, get_object_or_404
-
+from django.shortcuts import get_object_or_404
 # Create your views here.
 from rest_framework import viewsets
 from rest_framework.response import Response
 
 from api.serializers import StationsSerializer, SensorsSerializer, SensorDataSerializer
+from .permissions import IsSensorOwner
 from station.models import Station, Sensor, SensorData
 
 
@@ -35,10 +35,12 @@ class SensorViewSet(viewsets.ModelViewSet):
         serializer = SensorsSerializer(queryset, many=True, read_only=True)
         return Response(serializer.data)
 
+    def get_permissions(self):
+        if self.request.method == 'POST':
+            self.permission_classes = (IsSensorOwner,)
+        return super(SensorViewSet, self).get_permissions()
+
 
 class SensorDataViewSet(viewsets.ModelViewSet):
     queryset = SensorData.objects.all()
     serializer_class = SensorDataSerializer
-
-    # def perform_create(self, serializer):
-    #     serializer.save()
