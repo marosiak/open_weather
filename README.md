@@ -32,6 +32,7 @@ Endpoint: **/api/stations/[int]/sensors/**
 
 ### Adding new sensor to station
 **Important** You need to be logged in + you have to be owner of the specific station
+
 Method type: **[POST]**
 
 Endpoint: **/api/stations/[int]/sensors/**
@@ -52,6 +53,7 @@ Endpoint: **/api/stations/[int]/sensors/[int]/data/**
 
 ### Writting SensorData
 **Important** You need to be logged in + you have to be owner of the specific station
+
 Method type: **[POST]**
 
 Endpoint: **/api/stations/[int]/sensors/[int]/data/**
