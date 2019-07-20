@@ -49,3 +49,8 @@ class SensorViewSet(viewsets.ModelViewSet):
 class SensorDataViewSet(viewsets.ModelViewSet):
     queryset = SensorData.objects.all()
     serializer_class = SensorDataSerializer
+    
+    def perform_create(self, serializer):
+        sensor_pk = self.kwargs['sensor_pk']
+        serializer.validated_data['sensor'] = Sensor.objects.all().get(pk=sensor_pk)
+        return super(SensorDataViewSet, self).perform_create(serializer)
