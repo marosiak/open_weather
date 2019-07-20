@@ -34,6 +34,11 @@ class SensorViewSet(viewsets.ModelViewSet):
         queryset = Sensor.objects.all().filter(pk=pk)
         serializer = SensorsSerializer(queryset, many=True, read_only=True)
         return Response(serializer.data)
+    
+    def perform_create(self, serializer):
+        station_pk = self.kwargs['station_pk']
+        serializer.validated_data['station'] = Station.objects.all().get(pk=station_pk)
+        return super(SensorViewSet, self).perform_create(serializer)
 
     def get_permissions(self):
         if self.request.method == 'POST':
