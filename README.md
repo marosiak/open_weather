@@ -1,4 +1,4 @@
-# open_weather
+# Open Weather
 Web application with REST for IoT
 
 ![alt text](https://i.imgur.com/RKqWR7p.png "img")
