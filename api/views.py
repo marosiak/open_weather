@@ -54,3 +54,8 @@ class SensorDataViewSet(viewsets.ModelViewSet):
         sensor_pk = self.kwargs['sensor_pk']
         serializer.validated_data['sensor'] = Sensor.objects.all().get(pk=sensor_pk)
         return super(SensorDataViewSet, self).perform_create(serializer)
+
+    def get_permissions(self):
+        if self.request.method == 'POST': 
+            self.permission_classes = (IsSensorOwner,)
+        return super(SensorDataViewSet, self).get_permissions()
