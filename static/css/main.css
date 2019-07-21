@@ -84,6 +84,32 @@ html {
   opacity: 0.5;
 }
 
+h1 {
+  font-family: "Rubik", sans-serif;
+  font-weight: 300;
+  font-size: 3rem;
+}
+
+.station__delegate {
+  border: solid #10ACF6 2px;
+  width: 80vw;
+  height: 10.5rem;
+  color: #10ACF6;
+  font-family: "Rubik", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: all 150ms;
+  padding: 0;
+  margin: 0.3rem;
+}
+.station__delegate:hover {
+  background-color: #10ACF6;
+  color: white;
+}
+
 .social {
   width: 5rem;
   height: 5rem;
@@ -174,6 +200,20 @@ html {
   display: flex;
   justify-content: space-between;
   width: 12rem;
+}
+
+.stations {
+  padding-top: 3rem;
+  padding-left: 3.5rem;
+}
+.stations h1 {
+  padding-left: 0.1rem;
+}
+.stations .stations__list {
+  display: flex;
+  width: 70vw;
+  margin-top: 1rem;
+  padding: 0;
 }
 
 /*# sourceMappingURL=main.css.map */

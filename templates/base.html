@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
           integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script> new WOW().init(); </script>
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css'%}">
@@ -16,8 +17,8 @@
     <nav class="navigation {% if is_dashboard %} is-dashboard {% endif %}">
         <a href="/" class="nav__logo"><i class="fas fa-cloud-sun"></i></a>
         <ul class="nav__list">
-            <li><a href="#">Stations</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="{% url 'stations' %}">Stations</a></li>
+            <li><a href="{% url 'dashboard' %}#about">About</a></li>
             <li><a href="#">Api</a></li>
         </ul>
     </nav>
