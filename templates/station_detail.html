@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="station__details">
+    <br>
+    <ul>
+        <li><b>Name:</b> {{station.name}}</li>
+        <li><b>City:</b> {{station.city}}</li>
+        <li><b>Region:</b> {{station.region}}</li>
+    </ul>
+</div>
+{% endblock %}
