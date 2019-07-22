@@ -308,6 +308,9 @@ h2 {
   padding-top: 3rem;
   padding-left: 3.5rem;
 }
+.sensor__details h2 {
+  color: #3e3e3e;
+}
 .sensor__details .datas__list {
   padding: 0;
   margin: 1rem 0 0;
