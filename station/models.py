@@ -1,5 +1,6 @@
 # Create your models here.
 from django.db import models as models
+from datetime import datetime
 
 
 class Station(models.Model):
@@ -7,7 +8,7 @@ class Station(models.Model):
     city = models.CharField(max_length=85)  # That is the longest city name being owned by city in New Zealand :)
     region = models.CharField(max_length=60)
     owner = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    
+
     def __str__(self):
         return self.name
 
@@ -28,6 +29,12 @@ class SensorData(models.Model):
     date = models.DateTimeField(auto_now=True)
     sensor = models.ForeignKey(Sensor, on_delete=models.CASCADE, related_name='data')
 
+    def save(self, *kwargs):
+        # TODO: Timezone now for last_update! (I have no internet at this moment so can't google this shit out)
+        output = super(SensorData, self).save(kwargs)
+        self.sensor.last_value = self.value
+        self.sensor.save()
+        return output
+
     def __str__(self):
         return f'{self.sensor.name} = {self.value}'
-

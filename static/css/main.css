@@ -90,6 +90,12 @@ h1 {
   font-size: 3rem;
 }
 
+h2 {
+  font-family: "Rubik", sans-serif;
+  font-weight: 300;
+  font-size: 2rem;
+}
+
 .station__delegate {
   border: solid #10ACF6 2px;
   width: 80vw;
@@ -124,6 +130,14 @@ h1 {
   border: solid #10ACF6 2px;
   width: 14rem;
   margin: 0.45rem;
+  transition: all 150ms;
+}
+.sensor__delegate a {
+  text-decoration: none;
+  color: black;
+}
+.sensor__delegate:hover {
+  opacity: 0.5;
 }
 .sensor__delegate .sensor__delegate__header {
   background-color: #10ACF6;
@@ -140,6 +154,32 @@ h1 {
   align-items: center;
   height: 3rem;
   font-size: 1.15rem;
+  background-color: white;
+}
+
+.data__delegate {
+  display: flex;
+}
+.data__delegate .date {
+  background-color: #10ACF6;
+  padding: 0.65rem 0;
+  width: 13.5rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.data__delegate .content {
+  border: solid #10ACF6 2px;
+  padding: 0 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+.data__delegate .content b {
+  margin-left: 0.3rem;
+  font-weight: 500;
 }
 
 .social {
@@ -261,6 +301,20 @@ h1 {
   margin-top: 1rem;
   padding: 0;
   flex-wrap: wrap;
+  transition: all 250ms;
+}
+
+.sensor__details {
+  padding-top: 3rem;
+  padding-left: 3.5rem;
+}
+.sensor__details .datas__list {
+  padding: 0;
+  margin: 1rem 0 0;
+}
+.sensor__details .datas__list li {
+  margin: 0.5rem 0;
+  padding: 0;
 }
 
 /*# sourceMappingURL=main.css.map */

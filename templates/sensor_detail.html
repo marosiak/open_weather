@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="sensor__details">
+    <h1>{{sensor.station.city}} - {{sensor.station.name}}</h1>
+    <h2>{{sensor.name}}</h2>
+    <ul class="datas__list">
+        {% for data in datas %}
+        <li class="data__delegate">
+            <div class="date">{{data.date}}</div>
+            <div class="content">{{data.value}}<b>{{sensor.unit}}</b></div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

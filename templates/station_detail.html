@@ -5,14 +5,16 @@
     <h1>{{station.city}}</h1>
     <ul class="sensors__list">
         {% for sensor in sensors %}
-            <li class="sensor__delegate">
+        <li class="sensor__delegate">
+            <a href="{% url 'sensor-detail' sensor.pk %}">
                 <div class="sensor__delegate__header">{{sensor.name}}</div>
                 <div class="sensor__delegate__content">
                     <p>
-                        32 <b>C</b>
+                        {{sensor.last_value}} <b>{{sensor.unit}}</b>
                     </p>
                 </div>
-            </li>
+            </a>
+        </li>
         {% endfor %}
     </ul>
 </div>
