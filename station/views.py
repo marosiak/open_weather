@@ -2,7 +2,7 @@
 from django.views.generic import ListView, DetailView
 from django.views.generic.base import TemplateView
 
-from .models import Station
+from .models import Station, Sensor
 
 
 class DashboardView(TemplateView):
@@ -23,3 +23,8 @@ class StationsList(ListView):
 class StationDetail(DetailView):
     template_name = 'station_detail.html'
     model = Station
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['sensors'] = Sensor.objects.all().filter(station=self.kwargs['pk'])
+        return context

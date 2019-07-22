@@ -1,3 +1,14 @@
 .station__details {
-
+  padding-top: 3rem;
+  padding-left: 3.5rem;
+  h1 {
+    padding-left: .1rem;
+  }
+  .sensors__list {
+    display: flex;
+    width: 70vw;
+    margin-top: 1rem;
+    padding: 0;
+    flex-wrap: wrap;
+  }
 }

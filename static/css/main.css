@@ -120,6 +120,28 @@ h1 {
   color: white;
 }
 
+.sensor__delegate {
+  border: solid #10ACF6 2px;
+  width: 14rem;
+  margin: 0.45rem;
+}
+.sensor__delegate .sensor__delegate__header {
+  background-color: #10ACF6;
+  color: white;
+  height: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+}
+.sensor__delegate .sensor__delegate__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  font-size: 1.15rem;
+}
+
 .social {
   width: 5rem;
   height: 5rem;
@@ -224,6 +246,21 @@ h1 {
   width: 70vw;
   margin-top: 1rem;
   padding: 0;
+}
+
+.station__details {
+  padding-top: 3rem;
+  padding-left: 3.5rem;
+}
+.station__details h1 {
+  padding-left: 0.1rem;
+}
+.station__details .sensors__list {
+  display: flex;
+  width: 70vw;
+  margin-top: 1rem;
+  padding: 0;
+  flex-wrap: wrap;
 }
 
 /*# sourceMappingURL=main.css.map */

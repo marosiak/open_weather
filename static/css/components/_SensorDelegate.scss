@@ -1,0 +1,21 @@
+.sensor__delegate {
+  border: solid #10ACF6 2px;
+  width: 14rem;
+  margin: .45rem;
+  .sensor__delegate__header {
+    background-color: #10ACF6;
+    color: white;
+    height: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+  }
+  .sensor__delegate__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    font-size: 1.15rem;
+  }
+}

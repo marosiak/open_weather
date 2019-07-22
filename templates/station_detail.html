@@ -2,11 +2,18 @@
 {% load static %}
 {% block content %}
 <div class="station__details">
-    <br>
-    <ul>
-        <li><b>Name:</b> {{station.name}}</li>
-        <li><b>City:</b> {{station.city}}</li>
-        <li><b>Region:</b> {{station.region}}</li>
+    <h1>{{station.city}}</h1>
+    <ul class="sensors__list">
+        {% for sensor in sensors %}
+            <li class="sensor__delegate">
+                <div class="sensor__delegate__header">{{sensor.name}}</div>
+                <div class="sensor__delegate__content">
+                    <p>
+                        32 <b>C</b>
+                    </p>
+                </div>
+            </li>
+        {% endfor %}
     </ul>
 </div>
 {% endblock %}

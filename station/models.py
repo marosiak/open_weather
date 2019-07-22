@@ -15,6 +15,8 @@ class Station(models.Model):
 class Sensor(models.Model):
     name = models.CharField(max_length=50)
     last_update = models.DateTimeField(editable=False, null=True)
+    last_value = models.FloatField(editable=False, null=True)
+    unit = models.CharField(max_length=7)
     station = models.ForeignKey(Station, on_delete=models.CASCADE, related_name='sensors')
 
     def __str__(self):
