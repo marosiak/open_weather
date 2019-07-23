@@ -1,16 +1,20 @@
 .sensor__details {
-  padding-top: 3rem;
-  padding-left: 3.5rem;
+  font-family: 'Rubik', sans-serif;
+  padding: 3rem 10rem;
   h2 {
     color: #3e3e3e;
   }
   .datas__list {
+    color: #707070;
     padding: 0;
     margin: 1rem 0 0;
 
     li {
       margin: .5rem 0;
       padding: 0;
+      b {
+        font-weight: 300;
+      }
     }
   }
 }

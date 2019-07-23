@@ -1,12 +1,11 @@
 .stations {
-  padding-top: 3rem;
-  padding-left: 3.5rem;
+  padding: 3rem 10rem;
   h1 {
     padding-left: .1rem;
   }
   .stations__list {
     display: flex;
-    width: 70vw;
+    flex-wrap: wrap;
     margin-top: 1rem;
     padding: 0;
   }
