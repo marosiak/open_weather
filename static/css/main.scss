@@ -1,7 +1,6 @@
 *, ::after, ::before {
   margin: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
 }
 
 i {
@@ -17,12 +16,24 @@ html {
   flex-direction: column;
 }
 
+.row {
+  display: flex;
+}
+
+.row--space__beetwean {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @import "components/Navigation";
 @import "components/Headers";
 @import "components/StationDelegate";
 @import "components/SensorDelegate";
 @import "components/DataDelegate";
+@import "components/SelectBox";
 @import "views/DashboardView";
 @import "views/StationsView";
 @import "views/StationDetails";
 @import "views/SensorDetails";
+

@@ -36,5 +36,12 @@ class SensorDetail(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['datas'] = SensorData.objects.all().filter(sensor=self.kwargs['pk'])
+        query = SensorData.objects.all()
+        context['datas'] = query.filter(sensor=self.kwargs['pk'])
+
+        chart_datas = context['datas']
+        chart_datas = chart_datas.order_by('-id')[:5]
+        for chart__data in chart_datas:
+            chart__data.date = chart__data.date.strftime("%d/%m %H:%M")
+        context['chart_datas'] = reversed(chart_datas)
         return context

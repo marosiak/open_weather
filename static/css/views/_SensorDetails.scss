@@ -4,16 +4,29 @@
   h2 {
     color: #3e3e3e;
   }
-  .datas__list {
-    color: #707070;
-    padding: 0;
+
+  .row {
+    justify-content: space-between;
     margin: 1rem 0 0;
 
-    li {
-      margin: .5rem 0;
+    .chart {
+      width: 55%;
+      height: auto;
+      position: relative;
+
+    }
+
+    .datas__list {
+      color: #707070;
       padding: 0;
-      b {
-        font-weight: 300;
+
+      li {
+        margin: .5rem 0;
+        padding: 0;
+
+        b {
+          font-weight: 300;
+        }
       }
     }
   }

@@ -2,15 +2,70 @@
 {% load static %}
 {% block content %}
 <div class="sensor__details">
+
+
+    <div class="row--space__beetwean">
     <h1>{{sensor.station.city}} - {{sensor.station.name}}</h1>
-    <h2>{{sensor.name}}</h2>
-    <ul class="datas__list">
-        {% for data in datas %}
-        <li class="data__delegate">
-            <div class="date">{{data.date}}</div>
-            <div class="content">{{data.value}}<b>{{sensor.unit}}</b></div>
-        </li>
-        {% endfor %}
-    </ul>
+    <div class="select-box">
+        <div class="select-box__current" tabindex="1">
+            <div class="select-box__value"><input class="select-box__input" type="radio" id="0" value="1" name="Ben"
+                                                  checked="checked"/>
+                <p class="select-box__input-text">Day</p>
+            </div>
+            <div class="select-box__value"><input class="select-box__input" type="radio" id="1" value="2" name="Ben"
+                                                  checked="checked"/>
+                <p class="select-box__input-text">Week</p>
+            </div>
+            <div class="select-box__value"><input class="select-box__input" type="radio" id="2" value="3" name="Ben"
+                                                  checked="checked"/>
+                <p class="select-box__input-text">Month</p>
+            </div>
+            <img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon"
+                 aria-hidden="true"/></div>
+        <ul class="select-box__list">
+            <li><label class="select-box__option" for="0" aria-hidden="aria-hidden">Day</label></li>
+            <li><label class="select-box__option" for="1" aria-hidden="aria-hidden">Week</label></li>
+            <li><label class="select-box__option" for="2" aria-hidden="aria-hidden">Month</label></li>
+        </ul>
+    </div>
 </div>
+
+    <h2>{{sensor.name}}</h2>
+    <div class="row">
+        <ul class="datas__list">
+            {% for data in datas %}
+            <li class="data__delegate">
+                <div class="date">{{data.date}}</div>
+                <div class="content">{{data.value}}<b>{{sensor.unit}}</b></div>
+            </li>
+            {% endfor %}
+        </ul>
+        <div class="chart" id="chart"></div>
+    </div>
+</div>
+<script>
+    var dataSet = [];
+    var categorySet = [];
+    {% for data in chart_datas %}
+        dataSet.push({{data.value}});
+        categorySet.push("{{data.date}}");
+    {% endfor %}
+    var options = {
+        chart: {
+            type: 'line',
+            width: '99%',
+        },
+        series: [{
+            name: 'Presure',
+            data: dataSet
+        }],
+        xaxis: {
+            categories: categorySet
+        }
+    };
+
+    var chart = new ApexCharts(document.querySelector("#chart"), options);
+
+    chart.render();
+</script>
 {% endblock %}
