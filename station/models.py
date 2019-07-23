@@ -29,9 +29,9 @@ class SensorData(models.Model):
     date = models.DateTimeField(auto_now=True)
     sensor = models.ForeignKey(Sensor, on_delete=models.CASCADE, related_name='data')
 
-    def save(self, *kwargs):
+    def save(self, *args, **kwargs):
         # TODO: Timezone now for last_update! (I have no internet at this moment so can't google this shit out)
-        output = super(SensorData, self).save(kwargs)
+        output = super(SensorData, self).save(*args, **kwargs)
         self.sensor.last_value = self.value
         self.sensor.save()
         return output
