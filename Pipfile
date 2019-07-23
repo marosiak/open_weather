@@ -10,6 +10,7 @@ django = "*"
 djangorestframework = "*"
 ipdb = "*"
 drf-nested-routers = "*"
+django-filter = "*"
 
 [requires]
 python_version = "3.7"

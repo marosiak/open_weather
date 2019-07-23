@@ -12,10 +12,10 @@
                                                   checked="checked"/>
                 <p class="select-box__input-text">Day</p>
             </div>
-            <div class="select-box__value"><input class="select-box__input" type="radio" id="1" value="2" name="Ben"
-                                                  checked="checked"/>
+            <a class="select-box__value"><input class="select-box__input" type="radio" id="1" value="2" name="Ben"
+                                                  checked="checked"">
                 <p class="select-box__input-text">Week</p>
-            </div>
+            </a>
             <div class="select-box__value"><input class="select-box__input" type="radio" id="2" value="3" name="Ben"
                                                   checked="checked"/>
                 <p class="select-box__input-text">Month</p>
@@ -23,19 +23,26 @@
             <img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon"
                  aria-hidden="true"/></div>
         <ul class="select-box__list">
-            <li><label class="select-box__option" for="0" aria-hidden="aria-hidden">Day</label></li>
-            <li><label class="select-box__option" for="1" aria-hidden="aria-hidden">Week</label></li>
-            <li><label class="select-box__option" for="2" aria-hidden="aria-hidden">Month</label></li>
+            <li>
+                    <label class="select-box__option" for="0" aria-hidden="aria-hidden">Daily</label>
+            </li>
+            <li>
+                    <label class="select-box__option" for="1" aria-hidden="aria-hidden">Weekly</label>
+            </li>
+            <li>
+                    <label class="select-box__option" for="2" aria-hidden="aria-hidden">Monthly</label>
+            </li>
         </ul>
     </div>
 </div>
 
-    <h2>{{sensor.name}}</h2>
+    <h2>{{sensor.name}} ({{request.GET|get_arg:'range'}})</h2>
     <div class="row">
         <ul class="datas__list">
-            {% for data in datas %}
+
+            {% for data in filter.qs %}
             <li class="data__delegate">
-                <div class="date">{{data.date}}</div>
+                <div class="date">{{data.long_date}}</div>
                 <div class="content">{{data.value}}<b>{{sensor.unit}}</b></div>
             </li>
             {% endfor %}
@@ -44,9 +51,19 @@
     </div>
 </div>
 <script>
+    // $('.select-box__list').eac
+
+    $( ".select-box__list" ).children().each(function( index ) {
+        var name = $( this ).text().toLowerCase();
+        name = name.replace(/ /g,"");
+        $(this).click(function() {
+          location.href = '{{ sensor.pk }}?range='+name;
+        });
+    });
+
     var dataSet = [];
     var categorySet = [];
-    {% for data in chart_datas %}
+    {% for data in filter.qs reversed  %}
         dataSet.push({{data.value}});
         categorySet.push("{{data.date}}");
     {% endfor %}

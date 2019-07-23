@@ -1,7 +1,9 @@
 # Create your views here.
+from django.shortcuts import redirect
 from django.views.generic import ListView, DetailView
 from django.views.generic.base import TemplateView
 
+from .filters import SensorDataFilter
 from .models import Station, Sensor, SensorData
 
 
@@ -34,14 +36,10 @@ class SensorDetail(DetailView):
     template_name = 'sensor_detail.html'
     model = Sensor
 
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        query = SensorData.objects.all()
-        context['datas'] = query.filter(sensor=self.kwargs['pk'])
 
-        chart_datas = context['datas']
-        chart_datas = chart_datas.order_by('-id')[:5]
-        for chart__data in chart_datas:
-            chart__data.date = chart__data.date.strftime("%d/%m %H:%M")
-        context['chart_datas'] = reversed(chart_datas)
+        f = SensorDataFilter(self.request.GET, queryset=SensorData.objects.all())
+        context['filter'] = f
         return context
