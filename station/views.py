@@ -1,5 +1,4 @@
 # Create your views here.
-from django.shortcuts import redirect
 from django.views.generic import ListView, DetailView
 from django.views.generic.base import TemplateView
 
@@ -36,10 +35,13 @@ class SensorDetail(DetailView):
     template_name = 'sensor_detail.html'
     model = Sensor
 
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        queryset = SensorData.objects.all()[:10]
 
-        f = SensorDataFilter(self.request.GET, queryset=SensorData.objects.all())
+        f = SensorDataFilter(self.request.GET, queryset=queryset)
+        for set in f.qs:
+            set.long_date = set.date.strftime("%A %H:%M")
+            set.date = set.date.strftime("%m/%d")
         context['filter'] = f
         return context
