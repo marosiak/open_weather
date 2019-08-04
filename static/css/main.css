@@ -239,14 +239,16 @@ h2 {
   background-color: #101214;
 }
 
-.dashboard {
-  overflow-x: hidden;
-}
 .dashboard .section--home {
   height: calc(100vh - 4rem - 2px);
   width: 100vw;
   overflow: hidden;
   position: relative;
+}
+@media only screen and (max-width: 525px) {
+  .dashboard .section--home {
+    height: 30vh;
+  }
 }
 .dashboard .section--home .background__img {
   height: auto;
@@ -268,6 +270,20 @@ h2 {
   right: calc(50% - 18rem);
   font-weight: 300;
 }
+@media only screen and (max-width: 750px) {
+  .dashboard .section--home .dashboard__short {
+    font-size: 2.75rem;
+  }
+}
+@media only screen and (max-width: 525px) {
+  .dashboard .section--home .dashboard__short {
+    left: 0;
+    right: 0;
+    width: 100vw;
+    padding: 0 2vw;
+    font-size: 7.5vw;
+  }
+}
 .dashboard .section--home .dashboard__short b {
   font-weight: 400;
 }
@@ -278,12 +294,23 @@ h2 {
   flex-direction: column;
   justify-content: center;
 }
+@media only screen and (max-width: 525px) {
+  .dashboard .section--about {
+    height: auto;
+    padding: 2rem 0;
+  }
+}
 .dashboard .section--about .column {
   align-items: center;
 }
 .dashboard .section--about .column h1 {
   font-size: 36pt;
   font-weight: 300;
+}
+@media only screen and (max-width: 525px) {
+  .dashboard .section--about .column h1 {
+    font-size: 31pt;
+  }
 }
 .dashboard .section--about .column .spacer {
   width: 7rem;
@@ -296,6 +323,12 @@ h2 {
   width: 70vw;
   text-align: center;
   font-size: 17pt;
+}
+@media only screen and (max-width: 525px) {
+  .dashboard .section--about .column p {
+    font-size: 15pt;
+    width: 80vw;
+  }
 }
 .dashboard .section--about .column .social__row {
   margin-top: 5rem;

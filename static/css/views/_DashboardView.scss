@@ -1,12 +1,14 @@
 @import "../components/SocialIcon";
 
 .dashboard {
-  overflow-x: hidden;
   .section--home {
     height: calc(100vh - 4rem - 2px);
     width: 100vw;
     overflow: hidden;
     position: relative;
+    @include phone {
+      height: 30vh;
+    }
 
     .background__img {
       height: auto;
@@ -28,7 +30,16 @@
       left: calc(50% - 18rem);
       right: calc(50% - 18rem);
       font-weight: 300;
-
+      @include tablet {
+        font-size: 2.75rem;
+      }
+      @include phone {
+        left:0;
+        right: 0;
+        width: 100vw;
+        padding: 0 2vw;
+        font-size: 7.5vw;
+      }
       b {
         font-weight: 400;
       }
@@ -42,6 +53,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @include phone {
+      height: auto;
+      padding: 2rem 0;
+    }
 
     .column {
       align-items: center;
@@ -49,6 +64,9 @@
       h1 {
         font-size: 36pt;
         font-weight: 300;
+        @include phone {
+          font-size: 31pt;
+        }
       }
 
       .spacer {
@@ -63,6 +81,10 @@
         width: 70vw;
         text-align: center;
         font-size: 17pt;
+        @include phone {
+          font-size: 15pt;
+          width: 80vw;
+        }
       }
 
       .social__row {
