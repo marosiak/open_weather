@@ -13,6 +13,9 @@
   @include tablet {
     padding: 0 2rem;
   }
+  @include wide {
+    padding: 0 25rem
+  }
   a {
     color: white;
     text-decoration: none;
