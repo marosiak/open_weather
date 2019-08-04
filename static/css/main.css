@@ -129,7 +129,7 @@ h2 {
 
 .station__delegate {
   border: solid #10ACF6 2px;
-  width: 32%;
+  width: 15rem;
   height: 10.5rem;
   color: #10ACF6;
   font-family: "Rubik", sans-serif;
@@ -138,6 +138,22 @@ h2 {
   transition: all 150ms;
   padding: 0;
   margin: 0.3rem;
+}
+@media only screen and (min-width: 1520px) {
+  .station__delegate {
+    width: 22rem;
+  }
+}
+@media only screen and (max-width: 825px) {
+  .station__delegate {
+    width: 100%;
+    margin: 0.8rem 3rem;
+  }
+}
+@media only screen and (max-width: 525px) {
+  .station__delegate {
+    margin: 0.8rem 1.5rem;
+  }
 }
 .station__delegate:hover {
   background-color: #10ACF6;
@@ -252,7 +268,7 @@ h2 {
 }
 @media only screen and (max-width: 525px) {
   .dashboard .section--home {
-    height: 30vh;
+    height: auto;
   }
 }
 .dashboard .section--home .background__img {
@@ -345,8 +361,23 @@ h2 {
 .stations {
   padding: 3rem 10rem;
 }
+@media only screen and (max-width: 750px) {
+  .stations {
+    padding: 3rem 4rem;
+  }
+}
+@media only screen and (max-width: 525px) {
+  .stations {
+    padding: 3rem 2.5rem;
+  }
+}
 .stations h1 {
   padding-left: 0.1rem;
+}
+@media only screen and (max-width: 825px) {
+  .stations h1 {
+    text-align: center;
+  }
 }
 .stations .stations__list {
   display: flex;

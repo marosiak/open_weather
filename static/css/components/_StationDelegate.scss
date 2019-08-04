@@ -1,6 +1,6 @@
 .station__delegate {
   border: solid #10ACF6 2px;
-  width: 32%;
+  width: 15rem;
   height: 10.5rem;
   color: #10ACF6;
   font-family: 'Rubik', sans-serif;
@@ -9,7 +9,16 @@
   transition: all 150ms;
   padding: 0;
   margin: .3rem;
-
+  @include wide {
+    width: 22rem;
+  }
+  @include small-desktop {
+    width: 100%;
+    margin: .8rem 3rem;
+  }
+  @include phone {
+    margin: .8rem 1.5rem;
+  }
   &:hover {
     background-color: #10ACF6;
     color: white;

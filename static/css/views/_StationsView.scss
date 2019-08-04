@@ -1,7 +1,16 @@
 .stations {
   padding: 3rem 10rem;
+  @include tablet {
+    padding: 3rem 4rem;
+  }
+  @include phone {
+    padding: 3rem 2.5rem;
+  }
   h1 {
     padding-left: .1rem;
+    @include small-desktop {
+      text-align: center;
+    }
   }
   .stations__list {
     display: flex;
