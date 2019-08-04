@@ -27,13 +27,12 @@ html {
   justify-content: space-between;
   align-items: center;
 }
-
+@import "Mixins";
 @import "components/Navigation";
 @import "components/Headers";
 @import "components/StationDelegate";
 @import "components/SensorDelegate";
 @import "components/DataDelegate";
-@import "components/SelectBox";
 @import "views/DashboardView";
 @import "views/StationsView";
 @import "views/StationDetails";

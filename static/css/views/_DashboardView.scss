@@ -1,6 +1,7 @@
 @import "../components/SocialIcon";
 
 .dashboard {
+  overflow-x: hidden;
   .section--home {
     height: calc(100vh - 4rem - 2px);
     width: 100vw;

@@ -41,6 +41,11 @@ html {
   margin-bottom: 2px;
   box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.3);
 }
+@media only screen and (max-width: 750px) {
+  .navigation {
+    padding: 0 2rem;
+  }
+}
 .navigation a {
   color: white;
   text-decoration: none;
@@ -60,6 +65,11 @@ html {
   justify-content: center;
   transition: all 80ms;
 }
+@media only screen and (max-width: 525px) {
+  .navigation .nav__logo {
+    display: none;
+  }
+}
 .navigation .nav__logo i {
   font-size: 27pt;
 }
@@ -75,6 +85,11 @@ html {
   width: 19.5rem;
   height: 100%;
   min-width: 265px;
+}
+@media only screen and (max-width: 525px) {
+  .navigation .nav__list {
+    width: 100%;
+  }
 }
 .navigation .nav__list li {
   overflow: hidden;
@@ -194,102 +209,6 @@ h2 {
   font-weight: 500;
 }
 
-.select-box {
-  position: relative;
-  display: block;
-  width: 100%;
-  font-family: "Open Sans", "Helvetica Neue", "Segoe UI", "Calibri", "Arial", sans-serif;
-  font-size: 16px;
-  color: #60666d;
-  z-index: 55;
-}
-@media (min-width: 768px) {
-  .select-box {
-    width: 70%;
-  }
-}
-@media (min-width: 992px) {
-  .select-box {
-    width: 50%;
-  }
-}
-@media (min-width: 1200px) {
-  .select-box {
-    width: 20%;
-  }
-}
-.select-box__current {
-  position: relative;
-  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  outline: none;
-}
-.select-box__current:focus + .select-box__list {
-  opacity: 1;
-  animation-name: none;
-}
-.select-box__current:focus + .select-box__list .select-box__option {
-  cursor: pointer;
-}
-.select-box__current:focus .select-box__icon {
-  transform: translateY(-50%) rotate(180deg);
-}
-.select-box__icon {
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  transform: translateY(-50%);
-  width: 20px;
-  opacity: 0.3;
-  transition: 0.2s ease;
-}
-.select-box__value {
-  display: flex;
-}
-.select-box__input {
-  display: none;
-}
-.select-box__input:checked + .select-box__input-text {
-  display: block;
-}
-.select-box__input-text {
-  display: none;
-  width: 100%;
-  margin: 0;
-  padding: 15px;
-  background-color: #e2e2e2;
-}
-.select-box__list {
-  position: absolute;
-  width: 100%;
-  padding: 0;
-  list-style: none;
-  opacity: 0;
-  animation-name: HideList;
-  animation-duration: 0.5s;
-  animation-delay: 0.5s;
-  animation-fill-mode: forwards;
-  animation-timing-function: step-start;
-  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
-}
-.select-box__option {
-  display: block;
-  padding: 15px;
-  background-color: #eeeeee;
-}
-.select-box__option:hover, .select-box__option:focus {
-  color: #546c84;
-  background-color: #e7e7e7;
-}
-
-@keyframes HideList {
-  from {
-    transform: scaleY(1);
-  }
-  to {
-    transform: scaleY(0);
-  }
-}
 .social {
   width: 5rem;
   height: 5rem;
@@ -320,6 +239,9 @@ h2 {
   background-color: #101214;
 }
 
+.dashboard {
+  overflow-x: hidden;
+}
 .dashboard .section--home {
   height: calc(100vh - 4rem - 2px);
   width: 100vw;

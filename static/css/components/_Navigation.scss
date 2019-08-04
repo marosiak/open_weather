@@ -10,7 +10,9 @@
   padding: 0 10rem;
   margin-bottom: 2px;
   box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.3);
-
+  @include tablet {
+    padding: 0 2rem;
+  }
   a {
     color: white;
     text-decoration: none;
@@ -32,6 +34,9 @@
     align-items: center;
     justify-content: center;
     transition: all 80ms;
+    @include phone {
+      display: none;
+    }
     i {
       font-size: 27pt;
     }
@@ -49,6 +54,9 @@
     width: 19.5rem;
     height: 100%;
     min-width: 265px;
+    @include phone {
+      width: 100%;
+    }
 
     li {
       overflow: hidden;
