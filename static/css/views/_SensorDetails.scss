@@ -1,6 +1,17 @@
 .sensor__details {
   font-family: 'Rubik', sans-serif;
   padding: 3rem 10rem;
+  @include tablet {
+    padding: 3rem 5rem;
+  }
+  @include phone {
+    h1 {
+      font-size: 2.3rem;
+    }
+    h2 {
+      font-size: 1.9rem;
+    }
+  }
   h2 {
     color: #3e3e3e;
   }
@@ -8,12 +19,16 @@
   .row {
     justify-content: space-between;
     margin: 1rem 0 0;
-
+    @include medium-desktop {
+      flex-direction: column-reverse;
+    }
     .chart {
       width: 55%;
       height: auto;
       position: relative;
-
+      @include medium-desktop {
+        width: 100%;
+      }
     }
 
     .datas__list {
@@ -23,7 +38,12 @@
       li {
         margin: .5rem 0;
         padding: 0;
-
+        @include medium-desktop {
+          width: 70%;
+        }
+        @include small-desktop {
+          width: 100%;
+        }
         b {
           font-weight: 300;
         }

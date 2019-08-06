@@ -216,6 +216,11 @@ h2 {
   justify-content: center;
   align-items: center;
 }
+@media only screen and (max-width: 525px) {
+  .data__delegate .date {
+    width: 11rem;
+  }
+}
 .data__delegate .content {
   border: solid #10ACF6 2px;
   padding: 0 1.6rem;
@@ -224,6 +229,11 @@ h2 {
   align-items: center;
   font-size: 1.2rem;
   width: calc(100% - 13.5rem);
+}
+@media only screen and (max-width: 525px) {
+  .data__delegate .content {
+    width: calc(100% - 11rem);
+  }
 }
 .data__delegate .content b {
   margin-left: 0.3rem;
@@ -433,6 +443,19 @@ h2 {
   font-family: "Rubik", sans-serif;
   padding: 3rem 10rem;
 }
+@media only screen and (max-width: 750px) {
+  .sensor__details {
+    padding: 3rem 5rem;
+  }
+}
+@media only screen and (max-width: 525px) {
+  .sensor__details h1 {
+    font-size: 2.3rem;
+  }
+  .sensor__details h2 {
+    font-size: 1.9rem;
+  }
+}
 .sensor__details h2 {
   color: #3e3e3e;
 }
@@ -440,10 +463,20 @@ h2 {
   justify-content: space-between;
   margin: 1rem 0 0;
 }
+@media only screen and (max-width: 1100px) {
+  .sensor__details .row {
+    flex-direction: column-reverse;
+  }
+}
 .sensor__details .row .chart {
   width: 55%;
   height: auto;
   position: relative;
+}
+@media only screen and (max-width: 1100px) {
+  .sensor__details .row .chart {
+    width: 100%;
+  }
 }
 .sensor__details .row .datas__list {
   color: #707070;
@@ -452,6 +485,16 @@ h2 {
 .sensor__details .row .datas__list li {
   margin: 0.5rem 0;
   padding: 0;
+}
+@media only screen and (max-width: 1100px) {
+  .sensor__details .row .datas__list li {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 825px) {
+  .sensor__details .row .datas__list li {
+    width: 100%;
+  }
 }
 .sensor__details .row .datas__list li b {
   font-weight: 300;

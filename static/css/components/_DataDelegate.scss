@@ -8,6 +8,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @include phone {
+      width: 11rem;
+    }
   }
   .content {
     border: solid #10ACF6 2px;
@@ -17,6 +20,9 @@
     align-items: center;
     font-size: 1.2rem;
     width: calc(100% - 13.5rem);
+    @include phone {
+      width: calc(100% - 11rem);
+    }
     b {
       margin-left: .3rem;
       font-weight: 500;
