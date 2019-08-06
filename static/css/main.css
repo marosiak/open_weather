@@ -175,7 +175,7 @@ h2 {
 
 .sensor__delegate {
   border: solid #10ACF6 2px;
-  width: 23%;
+  width: 15rem;
   margin: 0.45rem;
   transition: all 150ms;
 }
@@ -389,8 +389,28 @@ h2 {
 .station__details {
   padding: 3rem 10rem;
 }
+@media only screen and (min-width: 1520px) {
+  .station__details {
+    padding-right: 25rem;
+  }
+}
+@media only screen and (max-width: 825px) {
+  .station__details {
+    padding: 3rem 6rem;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .station__details {
+    padding: 3rem 6vw;
+  }
+}
 .station__details h1 {
   padding-left: 0.1rem;
+}
+@media only screen and (max-width: 825px) {
+  .station__details h1 {
+    text-align: center;
+  }
 }
 .station__details .sensors__list {
   display: flex;
@@ -399,6 +419,14 @@ h2 {
   padding: 0;
   flex-wrap: wrap;
   transition: all 250ms;
+}
+@media only screen and (max-width: 825px) {
+  .station__details .sensors__list {
+    justify-content: center;
+  }
+  .station__details .sensors__list .sensor__delegate {
+    width: 40%;
+  }
 }
 
 .sensor__details {

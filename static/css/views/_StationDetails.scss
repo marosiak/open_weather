@@ -1,16 +1,34 @@
 .station__details {
   padding: 3rem 10rem;
+  @include wide {
+    padding-right: 25rem;
+  }
+  @include small-desktop {
+    padding: 3rem 6rem;
+  }
+  @include tablet {
+    padding: 3rem 6vw;
+  }
+
   h1 {
     padding-left: .1rem;
+    @include small-desktop {
+      text-align: center;
+    }
   }
+
   .sensors__list {
     display: flex;
-    //width: 70vw;
     width: 100%;
     margin-top: 1rem;
     padding: 0;
     flex-wrap: wrap;
     transition: all 250ms;
-
+    @include small-desktop {
+      justify-content: center;
+      .sensor__delegate {
+        width: 40%;
+      }
+    }
   }
 }
